@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F743620C2B73070F00E140CC /* WineChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743620B2B73070F00E140CC /* WineChatView.swift */; };
 		F76904282B71887C0033EB60 /* helloworldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76904272B71887C0033EB60 /* helloworldApp.swift */; };
 		F769042A2B71887C0033EB60 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76904292B71887C0033EB60 /* ContentView.swift */; };
 		F769042C2B71887E0033EB60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F769042B2B71887E0033EB60 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F743620B2B73070F00E140CC /* WineChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineChatView.swift; sourceTree = "<group>"; };
 		F76904242B71887C0033EB60 /* helloworld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = helloworld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F76904272B71887C0033EB60 /* helloworldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helloworldApp.swift; sourceTree = "<group>"; };
 		F76904292B71887C0033EB60 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			children = (
 				F76904272B71887C0033EB60 /* helloworldApp.swift */,
 				F76904292B71887C0033EB60 /* ContentView.swift */,
+				F743620B2B73070F00E140CC /* WineChatView.swift */,
 				F769042B2B71887E0033EB60 /* Assets.xcassets */,
 				F769042D2B71887E0033EB60 /* Preview Content */,
 			);
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F743620C2B73070F00E140CC /* WineChatView.swift in Sources */,
 				F769042A2B71887C0033EB60 /* ContentView.swift in Sources */,
 				F76904282B71887C0033EB60 /* helloworldApp.swift in Sources */,
 			);
@@ -422,6 +426,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"helloworld/Preview Content\"";
+				DEVELOPMENT_TEAM = 49MM68RRK8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -429,6 +434,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -450,6 +456,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"helloworld/Preview Content\"";
+				DEVELOPMENT_TEAM = 49MM68RRK8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -457,6 +464,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
