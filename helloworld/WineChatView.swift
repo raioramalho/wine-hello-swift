@@ -9,6 +9,8 @@ struct Message {
 struct WineChatView: View {
     @State private var questionText = ""
     @State private var messages: [Message] = [] // Array para armazenar as mensagens
+    @State private var isSendingQuestion = false // Flag para indicar se está enviando uma pergunta
+
     
     var body: some View {
         VStack {
@@ -27,9 +29,16 @@ struct WineChatView: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 
                 Button(action: sendQuestion) {
-                    Image(systemName: "paperplane.fill")
-                        .foregroundColor(.purple)
-                        .padding(.horizontal)
+                    if isSendingQuestion {
+                                           ProgressView() // Indicador de atividade durante o envio
+                                       } else {
+                                           Image(systemName: "paperplane.fill")
+                                               .foregroundColor(.purple)
+                                               .padding(.horizontal)
+                                       }
+//                    Image(systemName: "paperplane.fill")
+//                        .foregroundColor(.purple)
+//                        .padding(.horizontal)
                 }
             }
             .padding()
@@ -44,7 +53,7 @@ struct WineChatView: View {
 
     func sendQuestion() {
         let newQuestion = Message(question: questionText, response: "")
-
+        isSendingQuestion = true
         messages.append(newQuestion)
         
         makeGetRequest(question: questionText) { result in
@@ -54,6 +63,7 @@ struct WineChatView: View {
                 do {
                     if let content = json["content"] as? String {
                         messages[messages.count - 1].response = content // Atualiza a resposta da mensagem
+                        isSendingQuestion = false
                         print("Conteúdo:", content)
                     } else {
                         print("O conteúdo não foi encontrado no JSON.")
