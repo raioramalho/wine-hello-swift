@@ -36,6 +36,8 @@ struct WineChatView: View {
         Button(action: sendQuestion) {
           if isSendingQuestion {
             ProgressView()  // Indicador de atividade durante o envio
+                  .foregroundColor(.purple)
+                  .padding()
           } else {
             Image(systemName: "paperplane.fill")
               .foregroundColor(.purple)
