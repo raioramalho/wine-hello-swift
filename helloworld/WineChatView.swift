@@ -25,8 +25,13 @@ struct WineChatView: View {
       HStack {
         TextField("Faça uma pergunta...", text: $questionText)
           .foregroundColor(.white)
-          .border(Color.purple)
-          .textFieldStyle(RoundedBorderTextFieldStyle())
+//          .border(Color.purple)
+//          .textFieldStyle(RoundedBorderTextFieldStyle())
+          .padding()
+          .background(
+            RoundedRectangle(cornerRadius: 5) // Ajuste o valor do cornerRadius conforme desejado
+            .stroke(Color.purple, lineWidth: 1) // Adicione uma borda colorida
+          )
 
         Button(action: sendQuestion) {
           if isSendingQuestion {
@@ -151,38 +156,48 @@ struct WineChatView: View {
 }
 
 struct MessageView: View {
-  var message: Message
-
-  var body: some View {
-    VStack {
-      if !message.question.isEmpty {
-        Text(message.question)
-          .padding(10)
-          .background(Color.gray)
-          .foregroundColor(.black)
-          .cornerRadius(10)
-          .multilineTextAlignment(.trailing)
-          .padding(.horizontal, 10)
-          .padding(.vertical, 5)
-          .fixedSize(horizontal: false, vertical: true)
-      }
-
-      if !message.response.isEmpty {
-        Text(message.response)
-          .padding(10)
-          .background(Color.purple)
-          .foregroundColor(.white)
-          .cornerRadius(10)
-          .multilineTextAlignment(.leading)
-          .padding(.horizontal, 10)
-          .padding(.vertical, 5)
-          .fixedSize(horizontal: false, vertical: true)
-      }
+    var message: Message
+    
+    var body: some View {
+        HStack {
+            Spacer()
+            VStack {
+                if !message.question.isEmpty {
+                    Text(message.question)
+                        .padding(10)
+                        .background(Color.gray)
+                        .foregroundColor(.black)
+                        .cornerRadius(10)
+                        .multilineTextAlignment(.trailing)
+                        .padding(.horizontal, 5)
+                        .padding(.vertical, 5)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                
+                if !message.response.isEmpty {
+                    Text(message.response)
+                        .padding(10)
+                        .background(Color.purple)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .multilineTextAlignment(.leading)
+                        .padding(.horizontal, 5)
+                        .padding(.vertical, 5)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+            }
+            .alignmentGuide(.top) { _ in 0 }
+        }
+        .frame(maxWidth: .infinity, alignment: message.response.isEmpty ? .trailing : .leading)
     }
-  }
 }
+
 
 // Aqui estão as variáveis ​​globais para o token da API e o ID da fonte
 let apiToken = "sec_aFa3xj6hldU72HH2DJyqO7EHTuAsyQxp"
 let sourceId = "src_Z9rHh9Pl87k3HiITJ8qOR"
+
+#Preview {
+    WineChatView()
+}
 
